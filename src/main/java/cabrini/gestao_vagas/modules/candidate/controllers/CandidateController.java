@@ -1,8 +1,7 @@
 package cabrini.gestao_vagas.modules.candidate.controllers;
 
-import cabrini.gestao_vagas.exceptions.UserFoundException;
 import cabrini.gestao_vagas.modules.candidate.CandidateEntity;
-import cabrini.gestao_vagas.modules.candidate.CandidateRepository;
+import cabrini.gestao_vagas.modules.candidate.useCase.CreateCandidateUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,13 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class CandidateController {
 
     @Autowired
-    private CandidateRepository candidateRepository;
+    private CreateCandidateUseCase createCandidateUseCase;
 
     @PostMapping("/")
-    public ResponseEntity<Void> create(@RequestBody @Valid CandidateEntity candidateEntity) {
-        this.candidateRepository.findByUsernameOrEmail(candidateEntity.getUsername(), candidateEntity.getEmail()).ifPresent(user -> {
-            throw new UserFoundException();
-        });
-        return ResponseEntity.badRequest().build();
+    public ResponseEntity<Object> create(@RequestBody @Valid CandidateEntity candidateEntity) {
+        try {
+            var result = this.createCandidateUseCase.execute(candidateEntity);
+            return ResponseEntity.ok().body(result);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }

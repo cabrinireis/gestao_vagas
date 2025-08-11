@@ -1,5 +1,6 @@
 package cabrini.gestao_vagas.modules.company.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +28,7 @@ public class JobEntity {
 
     @ManyToOne() // Relation with company
     @JoinColumn(name = "company_id", insertable = false, updatable = false)
+    @JsonIgnore
     private CompanyEntity companyEntity;
 
     @Column(name = "company_id", nullable = false)

@@ -1,7 +1,7 @@
 package cabrini.gestao_vagas.modules.company.controllers;
 
 import cabrini.gestao_vagas.modules.company.entities.CompanyEntity;
-import cabrini.gestao_vagas.modules.company.entities.useCases.CreateCompanyUseCase;
+import cabrini.gestao_vagas.modules.company.useCases.CreateCompanyUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

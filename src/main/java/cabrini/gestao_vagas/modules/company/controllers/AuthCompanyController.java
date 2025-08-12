@@ -1,7 +1,7 @@
 package cabrini.gestao_vagas.modules.company.controllers;
 
-import cabrini.gestao_vagas.modules.company.entities.useCases.AuthCompanyUseCase;
-import cabrini.gestao_vagas.modules.dto.AuthCompanyDTO;
+import cabrini.gestao_vagas.modules.company.dto.AuthCompanyDTO;
+import cabrini.gestao_vagas.modules.company.useCases.AuthCompanyUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

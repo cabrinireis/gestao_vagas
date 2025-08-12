@@ -1,4 +1,4 @@
-package cabrini.gestao_vagas.modules.dto;
+package cabrini.gestao_vagas.modules.company.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

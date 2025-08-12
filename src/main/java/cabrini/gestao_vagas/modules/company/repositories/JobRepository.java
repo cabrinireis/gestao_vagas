@@ -1,4 +1,4 @@
-package cabrini.gestao_vagas.modules.company.entities.repositories;
+package cabrini.gestao_vagas.modules.company.repositories;
 
 import cabrini.gestao_vagas.modules.company.entities.JobEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,7 +1,7 @@
 package cabrini.gestao_vagas.modules.company.controllers;
 
 import cabrini.gestao_vagas.modules.company.entities.JobEntity;
-import cabrini.gestao_vagas.modules.company.entities.useCases.CreateJobUseCase;
+import cabrini.gestao_vagas.modules.company.useCases.CreateJobUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

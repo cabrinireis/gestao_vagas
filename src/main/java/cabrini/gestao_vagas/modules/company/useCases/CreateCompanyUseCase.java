@@ -1,8 +1,8 @@
-package cabrini.gestao_vagas.modules.company.entities.useCases;
+package cabrini.gestao_vagas.modules.company.useCases;
 
 import cabrini.gestao_vagas.exceptions.UserFoundException;
 import cabrini.gestao_vagas.modules.company.entities.CompanyEntity;
-import cabrini.gestao_vagas.modules.company.entities.repositories.CompanyRepository;
+import cabrini.gestao_vagas.modules.company.repositories.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class CreateCompanyUseCase {
                 });
         var password = passwordEncoder.encode(companyEntity.getPassword());
         companyEntity.setPassword(password);
-        
+
         return this.companyRepository.save(companyEntity);
     }
 }
